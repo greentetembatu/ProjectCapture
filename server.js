@@ -99,6 +99,7 @@ app.delete('/api/sumber/:id', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Server API berjalan di http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server API berjalan di port ${PORT}`);
 });
