@@ -1,0 +1,172 @@
+/* Reset dasar */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 22px;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+
+/* Tombol Refresh */
+.btn-refresh {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn-refresh:hover {
+  background: #1d4ed8;
+}
+
+/* Grid untuk Kartu Berita */
+.berita-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: 1 kolom */
+  gap: 20px;
+}
+
+/* Jika layar lebar (Desktop), ubah jadi 2 kolom */
+@media (min-width: 768px) {
+  .berita-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desain Kartu Berita */
+.kartu-berita {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.kartu-berita:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.badge {
+  background: #ef4444;
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  align-self: flex-start;
+  margin: 15px 15px 0 15px;
+  border-radius: 20px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+  background-color: #e5e7eb; /* Warna abu-abu sebelum gambar termuat */
+  margin-top: 10px;
+}
+
+.konten {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.tombol {
+  display: block;
+  text-align: center;
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.tombol:hover {
+  background: #059669;
+}
+
+/* Form Styles (Untuk Admin) */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+form h3 {
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button[type="submit"]:hover {
+  opacity: 0.9;
+}
