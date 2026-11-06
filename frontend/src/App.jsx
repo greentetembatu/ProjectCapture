@@ -71,7 +71,7 @@ function App() {
                   </div>
                 ) : (
                   <img
-                    src={`http://localhost:3000/capture_media_${berita.id}.png?t=${new Date().getTime()}`}
+                    src={`https://kernel-events-verified-happiness.trycloudflare.com/capture_media_${berita.id}.png?t=${new Date().getTime()}`}
                     alt={berita.nama_media}
                     className="thumbnail"
                     onError={(e) => {

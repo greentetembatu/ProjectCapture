@@ -15,7 +15,7 @@ export default function Admin() {
   const [modeEdit, setModeEdit] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/pengaturan')
+    fetch('https://kernel-events-verified-happiness.trycloudflare.com/api/pengaturan')
       .then(res => res.json())
       .then(data => setPengaturan(data))
       .catch(err => console.error(err));
@@ -23,7 +23,7 @@ export default function Admin() {
   }, []);
 
   const ambilSumber = () => {
-    fetch('http://localhost:3000/api/sumber')
+    fetch('https://kernel-events-verified-happiness.trycloudflare.com/api/sumber')
       .then(res => res.json())
       .then(data => setDaftarSumber(data))
       .catch(err => console.error(err));
@@ -31,7 +31,7 @@ export default function Admin() {
 
   const simpanPengaturan = (e) => {
     e.preventDefault();
-    fetch('http://localhost:3000/api/pengaturan', {
+    fetch('https://kernel-events-verified-happiness.trycloudflare.com/api/pengaturan', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pengaturan)
     }).then(() => alert('Pengaturan Global Disimpan!'));
   };
@@ -49,7 +49,7 @@ export default function Admin() {
     };
 
     const method = modeEdit ? 'PUT' : 'POST';
-    const urlAPI = modeEdit ? `http://localhost:3000/api/sumber/${dataSumber.id}` : 'http://localhost:3000/api/sumber';
+    const urlAPI = modeEdit ? `https://kernel-events-verified-happiness.trycloudflare.com/api/sumber/${dataSumber.id}` : 'https://kernel-events-verified-happiness.trycloudflare.com/api/sumber';
 
     fetch(urlAPI, {
       method: method, 
@@ -67,7 +67,7 @@ export default function Admin() {
 
   const hapusSumber = (id) => {
     if (window.confirm("Yakin ingin menghapus sumber berita ini?")) {
-      fetch(`http://localhost:3000/api/sumber/${id}`, { method: 'DELETE' })
+      fetch(`https://kernel-events-verified-happiness.trycloudflare.com/api/sumber/${id}`, { method: 'DELETE' })
         .then(() => ambilSumber());
     }
   };
