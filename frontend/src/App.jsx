@@ -7,7 +7,7 @@ function App() {
 
   const ambilData = () => {
     setLoading(true);
-    fetch("http://localhost:3000/api/sumber")
+    fetch("https://kernel-events-verified-happiness.trycloudflare.com/api/sumber")
       .then((res) => res.json())
       .then((data) => {
         setDaftarBerita(data);
